@@ -9,8 +9,8 @@ public class LineComparison {
         int x1 = 2, y1 = 4;
         int x2 = 6, y2 = 8;
 
-        int x3 = 2, y3 = 4;
-        int x4 = 6, y4 = 8;
+        int x3 = 1, y3 = 2;
+        int x4 = 10, y4 = 12;
 
         Double line1Length = Math.sqrt(
                 Math.pow((x2 - x1), 2) +
@@ -25,10 +25,14 @@ public class LineComparison {
         System.out.println("Line 1 Length: " + line1Length);
         System.out.println("Line 2 Length: " + line2Length);
 
-        if (line1Length.equals(line2Length)) {
+        int result = line1Length.compareTo(line2Length);
+
+        if (result == 0) {
             System.out.println("Both lines are equal");
+        } else if (result > 0) {
+            System.out.println("Line 1 is greater than Line 2");
         } else {
-            System.out.println("Lines are not equal");
+            System.out.println("Line 1 is less than Line 2");
         }
     }
 }
