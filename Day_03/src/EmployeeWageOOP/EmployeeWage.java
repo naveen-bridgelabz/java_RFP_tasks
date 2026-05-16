@@ -6,14 +6,31 @@ public class EmployeeWage {
 
         System.out.println("Welcome to Employee Wage Computation Program");
 
-        int IS_PRESENT = 1;
+        int IS_PART_TIME = 1;
+        int IS_FULL_TIME = 2;
 
-        double randomCheck = Math.floor(Math.random() * 10) % 2;
+        int EMP_RATE_PER_HOUR = 20;
 
-        if (randomCheck == IS_PRESENT) {
-            System.out.println("Employee is Present");
-        } else {
-            System.out.println("Employee is Absent");
+        int empHrs = 0;
+
+        double empCheck = Math.floor(Math.random() * 10) % 3;
+
+        switch ((int) empCheck) {
+
+            case IS_PART_TIME:
+                empHrs = 4;
+                break;
+
+            case IS_FULL_TIME:
+                empHrs = 8;
+                break;
+
+            default:
+                empHrs = 0;
         }
+
+        int empWage = empHrs * EMP_RATE_PER_HOUR;
+
+        System.out.println("Employee Wage: " + empWage);
     }
 }
