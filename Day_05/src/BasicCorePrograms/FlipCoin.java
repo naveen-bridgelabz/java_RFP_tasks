@@ -8,7 +8,6 @@ public class FlipCoin {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter the number ");
         System.out.print("Enter number of times to flip coin: ");
         int number = scanner.nextInt();
 
