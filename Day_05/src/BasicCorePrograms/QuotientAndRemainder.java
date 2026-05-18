@@ -23,5 +23,7 @@ public class QuotientAndRemainder {
         System.out.println("Quotient: " + quotient);
 
         System.out.println("Remainder: " + remainder);
+
+        System.out.println("=== End of line ===");
     }
 }
