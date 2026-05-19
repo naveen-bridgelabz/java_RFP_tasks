@@ -6,25 +6,37 @@ public class GamblingSimulator {
 
     static final int BET = 1;
 
+    static final int WIN_LIMIT = 150;
+
+    static final int LOSS_LIMIT = 50;
+
     public static void main(String[] args) {
 
         int cash = STAKE;
 
-        int random = (int) (Math.random() * 2);
+        while (cash > LOSS_LIMIT && cash < WIN_LIMIT) {
 
-        if (random == 1) {
+            int random = (int) (Math.random() * 2);
 
-            cash += BET;
+            if (random == 1) {
 
-            System.out.println("Gambler Won $1");
+                cash += BET;
+
+            } else {
+
+                cash -= BET;
+            }
+        }
+
+        if (cash == WIN_LIMIT) {
+
+            System.out.println("Gambler reached Winning Limit");
 
         } else {
 
-            cash -= BET;
-
-            System.out.println("Gambler Lost $1");
+            System.out.println("Gambler reached Losing Limit");
         }
 
-        System.out.println("Remaining Cash: $" + cash);
+        System.out.println("Final Cash: $" + cash);
     }
 }
