@@ -10,7 +10,9 @@ public class GamblingSimulator {
 
     static final int LOSS_LIMIT = 50;
 
-    public static void main(String[] args) {
+    static final int DAYS = 20;
+
+    public static int playForDay() {
 
         int cash = STAKE;
 
@@ -28,15 +30,19 @@ public class GamblingSimulator {
             }
         }
 
-        if (cash == WIN_LIMIT) {
+        return cash - STAKE;
+    }
 
-            System.out.println("Gambler reached Winning Limit");
+    public static void main(String[] args) {
 
-        } else {
+        int totalAmount = 0;
 
-            System.out.println("Gambler reached Losing Limit");
+        for (int day = 1; day <= DAYS; day++) {
+
+            totalAmount += playForDay();
         }
 
-        System.out.println("Final Cash: $" + cash);
+        System.out.println("Total Amount After 20 Days: $"
+                + totalAmount);
     }
 }
