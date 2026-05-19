@@ -8,10 +8,23 @@ public class GamblingSimulator {
 
     public static void main(String[] args) {
 
-        System.out.println("Welcome to Gambling Simulator");
+        int cash = STAKE;
 
-        System.out.println("Initial Stake: $" + STAKE);
+        int random = (int) (Math.random() * 2);
 
-        System.out.println("Bet Amount Per Game: $" + BET);
+        if (random == 1) {
+
+            cash += BET;
+
+            System.out.println("Gambler Won $1");
+
+        } else {
+
+            cash -= BET;
+
+            System.out.println("Gambler Lost $1");
+        }
+
+        System.out.println("Remaining Cash: $" + cash);
     }
 }
