@@ -49,4 +49,27 @@ public class AddressBook {
             person.displayContact();
         }
     }
+
+    public void editContact(String firstName) {
+
+        for (Contact person : contacts) {
+
+            if (person.firstName.equals(firstName)) {
+
+                System.out.print("Enter New City: ");
+
+                person.city = scanner.nextLine();
+
+                System.out.print("Enter New State: ");
+
+                person.state = scanner.nextLine();
+
+                System.out.println("Contact Updated");
+
+                return;
+            }
+        }
+
+        System.out.println("Contact Not Found");
+    }
 }
