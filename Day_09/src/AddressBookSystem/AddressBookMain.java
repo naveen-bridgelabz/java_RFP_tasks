@@ -15,5 +15,9 @@ public class AddressBookMain {
         addressBook.editContact("Naveen");
 
         addressBook.displayContacts();
+
+        addressBook.deleteContact("Naveen");
+
+        addressBook.displayContacts();
     }
 }
