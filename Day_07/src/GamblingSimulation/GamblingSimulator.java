@@ -35,27 +35,38 @@ public class GamblingSimulator {
 
     public static void gambleForMonth() {
 
-        int wonDays = 0;
+        int maxWin = Integer.MIN_VALUE;
 
-        int lostDays = 0;
+        int maxLoss = Integer.MAX_VALUE;
+
+        int luckiestDay = 0;
+
+        int unluckiestDay = 0;
 
         for (int day = 1; day <= DAYS; day++) {
 
             int result = gambleForDay();
 
-            if (result > 0) {
+            if (result > maxWin) {
 
-                wonDays++;
+                maxWin = result;
 
-            } else {
+                luckiestDay = day;
+            }
 
-                lostDays++;
+            if (result < maxLoss) {
+
+                maxLoss = result;
+
+                unluckiestDay = day;
             }
         }
 
-        System.out.println("Won Days: " + wonDays);
+        System.out.println("Luckiest Day: "
+                + luckiestDay);
 
-        System.out.println("Lost Days: " + lostDays);
+        System.out.println("Unluckiest Day: "
+                + unluckiestDay);
     }
 
     public static void main(String[] args) {
